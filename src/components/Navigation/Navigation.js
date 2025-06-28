@@ -9,7 +9,7 @@ const Navigation = () => (
       className={styles.link}
       activeClassName={styles.activeLink}
     >
-      Форма
+      Forma
     </NavLink>
 
     <NavLink
@@ -17,7 +17,7 @@ const Navigation = () => (
       className={styles.link}
       activeClassName={styles.activeLink}
     >
-      Колорпикер
+      Color Picker
     </NavLink>
 
     <NavLink
@@ -25,7 +25,7 @@ const Navigation = () => (
       className={styles.link}
       activeClassName={styles.activeLink}
     >
-      Счётчик
+      Counter
     </NavLink>
 
     <NavLink
@@ -33,7 +33,7 @@ const Navigation = () => (
       className={styles.link}
       activeClassName={styles.activeLink}
     >
-      Часы
+      Clock
     </NavLink>
 
     <NavLink
@@ -41,7 +41,7 @@ const Navigation = () => (
       className={styles.link}
       activeClassName={styles.activeLink}
     >
-      Покемоны
+      Pokemon
     </NavLink>
   </nav>
 );

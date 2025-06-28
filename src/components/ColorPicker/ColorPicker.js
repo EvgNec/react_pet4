@@ -14,7 +14,7 @@ export default function ColorPicker({ options }) {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Color Picker</h2>
-      <p>Выбран цвет: {label}</p>
+      <p>Chose color: {label}</p>
       <div>
         {options.map(({ label, color }, index) => (
           <button
@@ -53,7 +53,7 @@ export default function ColorPicker({ options }) {
 //     return (
 //       <div className={styles.container}>
 //         <h2 className={styles.title}>Color Picker</h2>
-//         <p>Выбран цвет: {label}</p>
+//         <p>Chose color: {label}</p>
 //         <div>
 //           {options.map(({ label, color }, index) => (
 //             <button

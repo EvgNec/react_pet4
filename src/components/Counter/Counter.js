@@ -15,7 +15,7 @@ export default function Counter() {
 
   useEffect(() => {
     const totalClicks = counterA + counterB;
-    document.title = `Всего кликнули ${totalClicks} раз`;
+    document.title = `All clicks ${totalClicks} раз`;
   }, [counterA, counterB]);
 
   return (
@@ -25,7 +25,7 @@ export default function Counter() {
         type="button"
         onClick={handleCounterAIncrement}
       >
-        Кликнули counterA {counterA} раз
+        click counterA {counterA} 
       </button>
 
       <button
@@ -33,7 +33,7 @@ export default function Counter() {
         type="button"
         onClick={handleCounterBIncrement}
       >
-        Кликнули counterB {counterB} раз
+        click counterB {counterB} 
       </button>
     </>
   );
@@ -57,7 +57,7 @@ export default function Counter() {
 //   const { counterA, counterB } = this.state;
 //   const totalClicks = counterA + counterB;
 
-//   document.title = `Всего кликнули ${totalClicks} раз`;
+//   document.title = `All clicks ${totalClicks}`;
 // }
 
 // componentDidUpdate(prevProps, prevState) {
@@ -66,7 +66,7 @@ export default function Counter() {
 //   if (prevState.counterA !== counterA || prevState.counterB !== counterB) {
 //     const totalClicks = counterA + counterB;
 
-//     document.title = `Всего кликнули ${totalClicks} раз`;
+//     document.title = `All clicks ${totalClicks}`;
 //   }
 // }
 
@@ -78,7 +78,7 @@ export default function Counter() {
 //           type="button"
 //           onClick={this.handleCounterAIncrement}
 //         >
-//           Кликнули counterA {this.state.counterA} раз
+//           Click counterA {this.state.counterA}
 //         </button>
 
 //         <button
@@ -86,7 +86,7 @@ export default function Counter() {
 //           type="button"
 //           onClick={this.handleCounterBIncrement}
 //         >
-//           Кликнули counterB {this.state.counterB} раз
+//           Click counterB {this.state.counterB}
 //         </button>
 //       </>
 //     );

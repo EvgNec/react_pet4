@@ -25,7 +25,7 @@ export default function SignupForm() {
   return (
     <form className={styles.form} autoComplete="off">
       <label className={styles.label}>
-        <span>Почта</span>
+        <span>Email</span>
         <input
           type="email"
           name="email"
@@ -35,7 +35,7 @@ export default function SignupForm() {
       </label>
 
       <label className={styles.label}>
-        <span>Пароль</span>
+        <span>Password</span>
         <input
           type="password"
           name="password"
@@ -44,7 +44,7 @@ export default function SignupForm() {
         />
       </label>
 
-      <button type="submit">Зарегистрироваться</button>
+      <button type="submit">Register</button>
     </form>
   );
 }
@@ -64,7 +64,7 @@ export default function SignupForm() {
 //     return (
 //       <form className={styles.form} autoComplete="off">
 //         <label className={styles.label}>
-//           <span>Почта</span>
+//           <span>Email</span>
 //           <input
 //             type="email"
 //             name="email"
@@ -74,7 +74,7 @@ export default function SignupForm() {
 //         </label>
 
 // <label className={styles.label}>
-//   <span>Пароль</span>
+//   <span>Password</span>
 //   <input
 //     type="password"
 //     name="password"
@@ -83,7 +83,7 @@ export default function SignupForm() {
 //   />
 // </label>
 
-//         <button type="submit">Зарегистрироваться</button>
+//         <button type="submit">Register</button>
 //       </form>
 //     );
 //   }

@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AppBar from './AppBar/AppBar.js';
-import SignupForm from './SignupForm/SignupForm.js';
-import ColorPicker from './ColorPicker/ColorPicker.js';
-import Counter from './Counter/Counter.js';
-import Clock from './Clock/Clock.js';
-import PokemonView from '../views/PokemonView.js';
+import { Routes, Route } from 'react-router-dom';
+import AppBar from './AppBar/AppBar';
+import SignupForm from './SignupForm/SignupForm';
+import ColorPicker from './ColorPicker/ColorPicker';
+import Counter from './Counter/Counter';
+import Clock from './Clock/Clock';
+import PokemonView from '../views/PokemonView';
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -23,19 +23,29 @@ const containerStyles = {
   paddingRight: 15,
 };
 
+// Простий компонент для головної сторінки
+function Home() {
+  return <h2>Welcome to the Home page!</h2>;
+}
+
+// Простий компонент для 404
+function NotFound() {
+  return <h2>404 - Page Not Found</h2>;
+}
 export default function App() {
   return (
     <div style={containerStyles}>
-      <AppBar/>
-      <Router>
-        <Routes>
-          <Route path="/signup" element={<SignupForm />} />
-          <Route path="/colorpicker" element={<ColorPicker options={colorPickerOptions} />} />
-          <Route path="/counter" element={<Counter />} />
-          <Route path="/clock" element={<Clock />} />
-          <Route path="/pokemon" element={<PokemonView />} />
-        </Routes>
-      </Router>
+      <AppBar />
+      <Routes>
+      <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignupForm />} />
+        <Route path="/colorpicker" element={<ColorPicker options={colorPickerOptions} />} />
+        <Route path="/counter" element={<Counter />} />
+        <Route path="/clock" element={<Clock />} />
+        <Route path="/pokemon" element={<PokemonView />} />
+        {/* 404: має бути останнім */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }

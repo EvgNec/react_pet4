@@ -28,27 +28,13 @@ export default function App() {
     <div style={containerStyles}>
       <AppBar />
       <Router>
-      <Routes>
-        <Route path="/signup">
-          <SignupForm />
-        </Route>
-
-        <Route path="/colorpicker">
-          <ColorPicker options={colorPickerOptions} />
-        </Route>
-
-        <Route path="/counter">
-          <Counter />
-        </Route>
-
-        <Route path="/clock">
-          <Clock />
-        </Route>
-
-        <Route path="/pokemon">
-          <PokemonView />
-        </Route>
-      </Routes>
+        <Routes>
+          <Route path="/signup" element={<SignupForm />} />
+          <Route path="/colorpicker" element={<ColorPicker options={colorPickerOptions} />} />
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/clock" element={<Clock />} />
+          <Route path="/pokemon" element={<PokemonView />} />
+        </Routes>
       </Router>
     </div>
   );

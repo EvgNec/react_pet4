@@ -5,6 +5,7 @@ import ColorPicker from './ColorPicker/ColorPicker';
 import Counter from './Counter/Counter';
 import Clock from './Clock/Clock';
 import PokemonView from '../views/PokemonView';
+import { Feedback } from './FeedbackClass/Feedback';
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/counter" element={<Counter />} />
         <Route path="/clock" element={<Clock />} />
         <Route path="/pokemon" element={<PokemonView />} />
+        <Route path="/feedbackClass" element={<Feedback />} />
         {/* 404: має бути останнім */}
         <Route path="*" element={<NotFound />} />
       </Routes>

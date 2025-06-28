@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AppBar from './components/AppBar/AppBar.js';
-import SignupForm from './components/SignupForm/SignupForm';
-import ColorPicker from './components/ColorPicker/ColorPicker';
-import Counter from './components/Counter/Counter';
-import Clock from './components/Clock/Clock';
-import PokemonView from './views/PokemonView';
+import AppBar from './AppBar/AppBar.js';
+import SignupForm from './SignupForm/SignupForm.js';
+import ColorPicker from './ColorPicker/ColorPicker.js';
+import Counter from './Counter/Counter.js';
+import Clock from './Clock/Clock.js';
+import PokemonView from '../views/PokemonView.js';
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -30,10 +30,10 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/signup" element={<SignupForm />} />
-          {/* <Route path="/colorpicker" element={<ColorPicker options={colorPickerOptions} />} />
+          <Route path="/colorpicker" element={<ColorPicker options={colorPickerOptions} />} />
           <Route path="/counter" element={<Counter />} />
           <Route path="/clock" element={<Clock />} />
-          <Route path="/pokemon" element={<PokemonView />} /> */}
+          <Route path="/pokemon" element={<PokemonView />} />
         </Routes>
       </Router>
     </div>

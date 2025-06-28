@@ -26,14 +26,14 @@ const containerStyles = {
 export default function App() {
   return (
     <div style={containerStyles}>
-      <AppBar />
+      <AppBar/>
       <Router>
         <Routes>
           <Route path="/signup" element={<SignupForm />} />
-          <Route path="/colorpicker" element={<ColorPicker options={colorPickerOptions} />} />
+          {/* <Route path="/colorpicker" element={<ColorPicker options={colorPickerOptions} />} />
           <Route path="/counter" element={<Counter />} />
           <Route path="/clock" element={<Clock />} />
-          <Route path="/pokemon" element={<PokemonView />} />
+          <Route path="/pokemon" element={<PokemonView />} /> */}
         </Routes>
       </Router>
     </div>

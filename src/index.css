@@ -34,3 +34,12 @@ button {
     transform: rotate(359deg);
   }
 }
+
+input,
+button {
+  transition: all 0.2s ease;
+}
+
+button {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

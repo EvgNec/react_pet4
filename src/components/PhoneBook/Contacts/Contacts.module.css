@@ -1,5 +1,6 @@
 .Contacts__list {
     list-style: none;
+    width: 600px;
     margin: 0;
     margin-bottom: 35px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);

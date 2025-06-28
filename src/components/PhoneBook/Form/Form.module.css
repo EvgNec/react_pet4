@@ -1,9 +1,15 @@
 .Form__form {
-    border: 1px solid #ccc;
-    padding: 16px;
-    margin-bottom: 24px;
-    max-width: 300px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 20px 30px;
+  padding-bottom: 25px;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  background-color: white;
   }
   
   .Form__label {
@@ -13,16 +19,41 @@
   }
   
   .Form__input[type="text"] {
+    display: block;
     width: 100%;
-    padding: 4px;
-    margin-bottom: 12px;
-    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+  
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
   }
   .Form__input[type="tel"] {
+    display: block;
     width: 100%;
-    padding: 4px;
-    margin-bottom: 12px;
-    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px;
+  
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+  }
+  .Form__input input:focus,
+  .Form__input select:focus 
+  {
+    border-color: #0077cc;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.5);
+    outline: none;
   }
   
   .Form__button {

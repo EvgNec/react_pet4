@@ -7,7 +7,7 @@ import Clock from './Clock/Clock';
 import PokemonView from '../views/PokemonView';
 import { Feedback } from './FeedbackClass/Feedback';
 import { PhoneBook } from './PhoneBook/PhoneBook';
-import { FeedbackHook } from './FeedbackHook/Feedback';
+import FeedbackHook from './FeedbackHook/Feedback';
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },

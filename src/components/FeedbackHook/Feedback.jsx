@@ -4,7 +4,7 @@ import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
 import Notification from './Notification/Notification';
 
-export class Feedback extends React.Component {
+export class FeedbackHook extends React.Component {
   state = {
     good: 0,
     neutral: 0,
@@ -26,7 +26,7 @@ export class Feedback extends React.Component {
   countPositiveFeedbackPercentage = total => {
     const percetnage = Math.round((this.state.good * 100) / total);
 
-    return percetnage;
+ return percetnage > 0 ? percetnage : 0 ;
   };
 
   render() {

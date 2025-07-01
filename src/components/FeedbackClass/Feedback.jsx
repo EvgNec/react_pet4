@@ -26,7 +26,7 @@ export class Feedback extends React.Component {
   countPositiveFeedbackPercentage = total => {
     const percetnage = Math.round((this.state.good * 100) / total);
 
-    return percetnage;
+    return percetnage > 0 ? percetnage : 0 ;
   };
 
   render() {

@@ -15,7 +15,8 @@ export default function Appbar() {
         <NavLink to="/clock" className={({ isActive }) => isActive ? 'active' : ''}>Clock</NavLink> |{' '}
         <NavLink to="/pokemon" className={({ isActive }) => isActive ? 'active' : ''}>Pokemon</NavLink>|{' '}
         <NavLink to="/phoneBook" className={({ isActive }) => isActive ? 'active' : ''}>PhoneBook</NavLink>|{' '}
-        <NavLink to="/feedbackClass" className={({ isActive }) => isActive ? 'active' : ''}>Feedback</NavLink>        
+        <NavLink to="/feedbackClass" className={({ isActive }) => isActive ? 'active' : ''}>FeedbackClass</NavLink>|{' '} 
+        <NavLink to="/feedbackHook" className={({ isActive }) => isActive ? 'active' : ''}>FeedbackHook</NavLink>        
       </nav>
       <p>User is {isLoggedIn ? 'logged in' : 'logged out'}</p>
     </header>

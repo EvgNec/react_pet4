@@ -4,15 +4,12 @@ import './Modal.scss';
 // app {showModal && <Modal closeModal={this.toggleModal}>Children</Modal>}
 export default function Modal({ closeModal, children }) {
   const modalRoot = document.querySelector('#modal-root');
-
-
-
   useEffect(() => {
     const handlePressESC = e => {
-        if (e.code === 'Escape') {
-          closeModal();
-        }
-      };
+      if (e.code === 'Escape') {
+        closeModal();
+      }
+    };
     console.log('Modal componentDidMount');
     window.addEventListener('keydown', handlePressESC);
     return () => {

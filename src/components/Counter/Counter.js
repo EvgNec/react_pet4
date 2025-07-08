@@ -1,16 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useReducer } from 'react';
 import styles from './Counter.module.css';
+
+function reduce (prevState, nextState){
+  return prevState + nextState
+}
 
 export default function Counter() {
   const [counterA, setCounterA] = useState(0);
-  const [counterB, setCounterB] = useState(0);
+  // const [counterB, setCounterB] = useState(0);
+
+  const [counterB, setCounterB] = useReducer(reduce,0)
 
   const handleCounterAIncrement = () => {
     setCounterA(state => state + 1);
   };
-
   const handleCounterBIncrement = () => {
-    setCounterB(state => state + 1);
+    setCounterB(1);
   };
 
   useEffect(() => {

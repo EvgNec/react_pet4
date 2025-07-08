@@ -5,17 +5,33 @@ function reduce (prevState, nextState){
   return prevState + nextState
 }
 
+function reduce2 (prevState, action){
+  if(action.type === 'increment') return prevState + action.payload
+  if(action.type === 'decrement') return prevState - action.payload
+}
+
 export default function Counter() {
   const [counterA, setCounterA] = useState(0);
   // const [counterB, setCounterB] = useState(0);
 
   const [counterB, setCounterB] = useReducer(reduce,0)
 
+  const [counterC, setCounterC] = useReducer(reduce2,0)
+
   const handleCounterAIncrement = () => {
     setCounterA(state => state + 1);
   };
   const handleCounterBIncrement = () => {
     setCounterB(1);
+  };
+  const handleCounterBDecrement = () => {
+    setCounterB(-1);
+  };
+  const handleCounterCIncrement = () => {
+    setCounterC({type:'increment', payload:1});
+  };
+  const handleCounterCDecrement = () => {
+    setCounterC({type:'decrement', payload:1});
   };
 
   useEffect(() => {
@@ -38,7 +54,30 @@ export default function Counter() {
         type="button"
         onClick={handleCounterBIncrement}
       >
-        click counterB {counterB} 
+        increment counterB {counterB} 
+      </button>
+      
+      <button
+        className={styles.btn}
+        type="button"
+        onClick={handleCounterBDecrement}
+      >
+        decrement counterB {counterB} 
+      </button>
+            <button
+        className={styles.btn}
+        type="button"
+        onClick={handleCounterCIncrement}
+      >
+        increment counterC {counterC} 
+      </button>
+      
+      <button
+        className={styles.btn}
+        type="button"
+        onClick={handleCounterCDecrement}
+      >
+        decrement counterC {counterC} 
       </button>
     </>
   );

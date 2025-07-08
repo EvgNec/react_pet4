@@ -1,22 +1,68 @@
 import { useState, useEffect, useReducer } from 'react';
 import styles from './Counter.module.css';
 
-function reduce (prevState, nextState){
-  return prevState + nextState
+function reduce(prevState, nextState) {
+  return prevState + nextState;
 }
 
-function reduce2 (prevState, action){
-  if(action.type === 'increment') return prevState + action.payload
-  if(action.type === 'decrement') return prevState - action.payload
+function reduce2(prevState, action) {
+  if (action.type === 'increment') return prevState + action.payload;
+  if (action.type === 'decrement') return prevState - action.payload;
+}
+// Приклад коли багато стайтів
+function reduce3(prevState, action) {
+  if (action.type === 'createUser')
+    return {
+      ...prevState,
+      user: action.payload,
+    };
+  if (action.type === 'createCountry')
+    return {
+      ...prevState,
+      user: action.payload,
+    };
+  if (action.type === 'addItem')
+    return {
+      ...prevState,
+      items: [...prevState.items, action.payload],
+    };
+  if (action.type === 'deleteItem')
+    return {
+      ...prevState,
+      items: prevState.items.filter(item => item.id !== action.payload),
+    };
+  if (action.type === 'clear')
+    return {
+      user: null,
+      country: '',
+      items: [],
+    };
 }
 
 export default function Counter() {
   const [counterA, setCounterA] = useState(0);
+
   // const [counterB, setCounterB] = useState(0);
+  const [counterB, setCounterB] = useReducer(reduce, 0);
 
-  const [counterB, setCounterB] = useReducer(reduce,0)
+  const [counterC, setCounterC] = useReducer(reduce2, 0);
 
-  const [counterC, setCounterC] = useReducer(reduce2,0)
+  const [state, dispatch] = useReducer(reduce3, {
+    user: null,
+    country: '',
+    items: [],
+  });
+
+// Установка користувача
+dispatch({ type: 'SET_USER', payload: { id: 1, name: 'Ivan' } });
+// Установка країни
+dispatch({ type: 'SET_COUNTRY', payload: 'Ukraine' });
+// Додавання елемента
+dispatch({ type: 'ADD_ITEM', payload: { id: 101, name: 'Item A' } });
+// Видалення елемента за id
+dispatch({ type: 'REMOVE_ITEM', payload: 101 });
+// Очистити все
+dispatch({ type: 'CLEAR_ALL' });
 
   const handleCounterAIncrement = () => {
     setCounterA(state => state + 1);
@@ -28,10 +74,10 @@ export default function Counter() {
     setCounterB(-1);
   };
   const handleCounterCIncrement = () => {
-    setCounterC({type:'increment', payload:1});
+    setCounterC({ type: 'increment', payload: 1 });
   };
   const handleCounterCDecrement = () => {
-    setCounterC({type:'decrement', payload:1});
+    setCounterC({ type: 'decrement', payload: 1 });
   };
 
   useEffect(() => {
@@ -46,7 +92,7 @@ export default function Counter() {
         type="button"
         onClick={handleCounterAIncrement}
       >
-        click counterA {counterA} 
+        click counterA {counterA}
       </button>
 
       <button
@@ -54,30 +100,30 @@ export default function Counter() {
         type="button"
         onClick={handleCounterBIncrement}
       >
-        increment counterB {counterB} 
+        increment counterB {counterB}
       </button>
-      
+
       <button
         className={styles.btn}
         type="button"
         onClick={handleCounterBDecrement}
       >
-        decrement counterB {counterB} 
+        decrement counterB {counterB}
       </button>
-            <button
+      <button
         className={styles.btn}
         type="button"
         onClick={handleCounterCIncrement}
       >
-        increment counterC {counterC} 
+        increment counterC {counterC}
       </button>
-      
+
       <button
         className={styles.btn}
         type="button"
         onClick={handleCounterCDecrement}
       >
-        decrement counterC {counterC} 
+        decrement counterC {counterC}
       </button>
     </>
   );

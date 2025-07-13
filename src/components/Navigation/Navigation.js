@@ -43,7 +43,15 @@ const Navigation = () => (
     >
       Pokemon
     </NavLink>
-  </nav>
+
+  <NavLink
+      to="/TestContent"
+      className={styles.link}
+      activeClassName={styles.activeLink}
+    >
+      TestContent
+    </NavLink>
+    </nav>
 );
 
 export default Navigation;

@@ -8,6 +8,7 @@ import PokemonView from '../views/PokemonView';
 import { Feedback } from './FeedbackClass/Feedback';
 import { PhoneBook } from './PhoneBook/PhoneBook';
 import FeedbackHook from './FeedbackHook/Feedback';
+import TestContent from './TestContent/TestContent.jsx';
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -47,8 +48,10 @@ export default function App() {
         <Route path="/clock" element={<Clock />} />
         <Route path="/pokemon" element={<PokemonView />} />
         <Route path="/phoneBook" element={<PhoneBook />} />
-        <Route path="/feedbackClass" element={<Feedback />} />
+        <Route path="/feedbackClass" element={<Feedback />} /> 
         <Route path="/feedbackHook" element={<FeedbackHook />} />
+        <Route path="/TestContent" element={<TestContent />} />
+        TestContent
         {/* 404: має бути останнім */}
         <Route path="*" element={<NotFound />} />
       </Routes>

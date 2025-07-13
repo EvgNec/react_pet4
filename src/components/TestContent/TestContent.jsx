@@ -2,7 +2,7 @@ import Alert from './Alert'
 import Context from './Context/Context'
 import Main from './Main'
 
-const App = () => {
+const TestContent = () => {
 	return (
 		<Context>
 			<div className='container pt-2'>
@@ -13,4 +13,4 @@ const App = () => {
 	)
 }
 
-export default App
+export default TestContent
